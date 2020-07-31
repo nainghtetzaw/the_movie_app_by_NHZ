@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_dark_blue">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvShowCases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SHOWCASES"
+        style="@style/GreyTextView"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMoreCases"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_more_showcases"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/tvShowCases"
+        android:layout_marginEnd="25dp"
+        android:textColor="@color/color_white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvShowCases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvShowCases"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp"
+        android:scrollbars="horizontal"
+        android:scrollbarSize="2dp"
+        android:scrollbarThumbHorizontal="@color/color_yellow"/>
+
+</RelativeLayout>

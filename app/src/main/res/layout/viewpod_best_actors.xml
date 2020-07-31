@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/color_littile_light_blue">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvBestActors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BEST ACTORS"
+        style="@style/GreyTextView"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMoreActors"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/tv_more_actors"
+        android:layout_alignParentEnd="true"
+        android:layout_alignBottom="@id/tvBestActors"
+        android:layout_marginEnd="25dp"
+        android:textColor="@color/color_white"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvBestActors"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/tvBestActors"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="20dp" />
+
+</RelativeLayout>

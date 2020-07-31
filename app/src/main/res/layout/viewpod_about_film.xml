@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvAboutFilm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ABOUT FILM"
+        android:textColor="@color/color_grey_blue"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvOriginal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Original Title:"
+        android:textStyle="bold"
+        android:textColor="@color/color_lighter_grey_blue"
+        android:layout_marginStart="20dp"
+        android:layout_below="@id/tvAboutFilm"
+        android:layout_marginTop="20dp"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMovieOriginalTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The Wolverine"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/tvOriginal"
+        android:layout_below="@id/tvAboutFilm"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/color_white"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Type:"
+        android:textStyle="bold"
+        android:textColor="@color/color_lighter_grey_blue"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tvMovieOriginalTitle" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMovieType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Family,Fantasy,Adventure"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/tvOriginal"
+        android:layout_below="@id/tvMovieOriginalTitle"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_white"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvProduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Production:"
+        android:textStyle="bold"
+        android:textColor="@color/color_lighter_grey_blue"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tvMovieType" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMovieProduction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="United Kingdom,USA"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/tvProduction"
+        android:layout_below="@id/tvMovieType"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_white"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvPremiere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Premiere:"
+        android:textStyle="bold"
+        android:textColor="@color/color_lighter_grey_blue"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tvMovieProduction" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMoviePremiere"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="8,November,2016(World)"
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/tvPremiere"
+        android:layout_below="@id/tvMovieProduction"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_white"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Description:"
+        android:textStyle="bold"
+        android:textColor="@color/color_lighter_grey_blue"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/tvMoviePremiere" />
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvMovieDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="The early years of James Logan, featuring his rivalry with his brother Victor Creed, his service in the special forces team Weapon X, and his experimentation into the metal-lined mutant Wolverine."
+        android:textStyle="bold"
+        android:layout_toEndOf="@id/tvPremiere"
+        android:layout_below="@id/tvMoviePremiere"
+        android:layout_marginStart="41dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="20dp"
+        android:textColor="@color/color_white"
+        android:ellipsize="end"
+        android:maxLines="4" />
+
+</RelativeLayout>

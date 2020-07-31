@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.MovieDetailActivity"
+    android:background="@color/color_dark_blue">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="28dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgMoviePoster"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                app:srcCompat="@drawable/the_wolverine_poster"
+                android:scaleType="centerCrop"
+                android:paddingTop="100dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/btnBack"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@drawable/circlebutton"
+                android:src="@drawable/ic_baseline_arrow_back_ios_24"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:paddingStart="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgSearch"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/ic_baseline_search_24"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="30dp"
+                android:padding="5dp"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="140dp"
+                android:layout_alignBottom="@id/imgMoviePoster"
+                android:background="@drawable/transparentviewmain">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvShowingYear"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2016"
+                    android:textColor="@color/color_white"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/roundedbtn"
+                    android:paddingStart="10dp"
+                    android:paddingEnd="11dp"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="7dp"
+                    android:textStyle="bold"
+                    android:layout_marginTop="20dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvRating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="9.72"
+                    android:textSize="50dp"
+                    android:textColor="@color/color_white"
+                    android:layout_alignParentEnd="true"/>
+
+                <androidx.appcompat.widget.AppCompatRatingBar
+                    android:id="@+id/rbFilmRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:numStars="5"
+                    android:layout_toStartOf="@id/tvRating"
+                    android:rating="4.5"
+                    android:progressBackgroundTint="@color/color_yellow"
+                    android:progressTint="@color/color_yellow"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginEnd="10dp"/>
+                
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvNumVotes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="31223 VOTES"
+                    android:textColor="@color/color_lighter_grey_blue"
+                    android:textStyle="bold"
+                    android:layout_below="@id/rbFilmRatingBar"
+                    android:layout_toStartOf="@id/tvRating"
+                    android:layout_marginEnd="10dp"/>
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="The Wolverine"
+                    android:layout_below="@id/tvRating"
+                    android:textSize="30dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/color_white"
+                    android:layout_marginStart="20dp"/>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgMovieLenght"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_baseline_access_time_24"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMovieLength"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="2h 13mins"
+                android:layout_toEndOf="@id/imgMovieLenght"
+                android:textColor="@color/color_white"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="12dp"/>
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chipCategoryGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/tvMovieLength"
+                android:layout_marginStart="8dp"
+                android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+                app:chipSpacingHorizontal="8dp">
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Family"
+                    android:textColor="@color/color_white"
+                    app:chipBackgroundColor="@color/color_littile_light_blue"/>
+
+                <com.google.android.material.chip.Chip
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adventure"
+                    android:textColor="@color/color_white"
+                    app:chipBackgroundColor="@color/color_littile_light_blue"/>
+
+            </com.google.android.material.chip.ChipGroup>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgFav"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:src="@drawable/ic_baseline_favorite_border_24"
+                android:layout_alignParentEnd="true"
+                android:padding="8dp"
+                android:layout_marginTop="11dp"
+                android:layout_marginEnd="10dp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvStoryline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/chipCategoryGroup"
+                android:text="STORYLINE"
+                android:textColor="@color/color_grey_blue"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"/>
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvStorylineReview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Seventy years before Harry Potter reading a book by Newt Scamandar, author experiencing extraordinary adventures in the mysterious, the New York Association of witches."
+                android:layout_below="@id/tvStoryline"
+                android:layout_marginStart="20dp"
+                android:textColor="@color/color_white"
+                android:textSize="18dp"
+                android:lineSpacingExtra="2dp"
+                android:layout_marginTop="5dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnPlayTrailer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvStorylineReview"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/roundedbtn"
+                android:text="PLAY TRAILER"
+                android:textColor="@color/color_white"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:drawableStart="@drawable/ic_baseline_play_circle_filled_25"
+                android:drawablePadding="8dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnRateMovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvStorylineReview"
+                android:layout_toEndOf="@id/btnPlayTrailer"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/circlebuttonstroke"
+                android:drawableStart="@drawable/ic_baseline_star_24"
+                android:text="RATE MOVIE"
+                android:textColor="@color/color_white"
+                android:textStyle="bold"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:layout_marginTop="10dp"/>
+
+        </RelativeLayout>
+        
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/color_littile_light_blue"
+            android:layout_marginTop="20dp">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvActors"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ACTORS"
+                android:textColor="@color/color_grey_blue"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvActors"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvActors"
+                android:layout_margin="5dp"/>
+
+        </RelativeLayout>
+
+        <include layout="@layout/viewpod_about_film"/>
+
+        <include layout="@layout/viewpod_creators"/>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

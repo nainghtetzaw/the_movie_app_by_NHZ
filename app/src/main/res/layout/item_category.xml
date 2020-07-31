@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_marginStart="20dp"
+    android:background="@color/color_littile_light_blue">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgPopularFilm"
+        android:layout_width="120dp"
+        android:layout_height="178dp"
+        app:srcCompat="@drawable/the_wolverine_poster"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/tvFilmName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wolverine"
+        android:textSize="12dp"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/color_white"/>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvFilmRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8.85"
+            android:textSize="12dp"
+            android:textStyle="bold"
+            android:layout_marginTop="2dp"
+            android:textColor="@color/color_white"/>
+
+        <androidx.appcompat.widget.AppCompatRatingBar
+            android:id="@+id/rbFilmRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:numStars="5"
+            android:layout_toEndOf="@id/tvFilmRating"
+            android:layout_alignBottom="@id/tvFilmRating"
+            android:rating="4.5"
+            android:layout_marginBottom="0.5dp"
+            android:layout_marginStart="5dp"
+            android:progressBackgroundTint="@color/color_yellow"
+            android:progressTint="@color/color_yellow"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgPopularFilm"
+        android:layout_width="120dp"
+        android:layout_height="180dp"
+        app:srcCompat="@drawable/tom_hank"
+        android:scaleType="centerCrop"
+        android:layout_marginEnd="20dp" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imgFav"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/ic_baseline_favorite_border_24"
+        android:padding="8dp"
+        android:layout_alignEnd="@id/imgPopularFilm"/>
+
+    <RelativeLayout
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/transparentview"
+        android:layout_alignBottom="@id/imgPopularFilm">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvActorName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tom Hanks"
+            android:textSize="10dp"
+            android:textColor="@color/color_white"
+            android:textStyle="bold"
+            android:layout_marginStart="10dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgThumbUp"
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_baseline_thumb_up_alt_24"
+            android:layout_below="@id/tvActorName"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="5dp"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvNumberOfMoviesYouLike"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YOU LIKE 18 MOVIES"
+            android:textSize="6dp"
+            android:textStyle="bold"
+            android:textColor="@color/color_grey_blue"
+            android:layout_below="@id/tvActorName"
+            android:layout_toEndOf="@id/imgThumbUp"
+            android:layout_marginStart="3dp"
+            android:layout_alignBottom="@id/imgThumbUp"/>
+
+    </RelativeLayout>
+
+
+
+
+</RelativeLayout>
