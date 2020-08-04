@@ -4,14 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.the_movie_app.data.vos.ActorsVO
-import com.example.the_movie_app.data.vos.MovieDetailVO
-import com.example.the_movie_app.data.vos.PopularMovieVO
-import com.example.the_movie_app.persistence.daos.ActorsDao
-import com.example.the_movie_app.persistence.daos.MovieDetailDao
-import com.example.the_movie_app.persistence.daos.PopularDao
+import com.example.the_movie_app.data.vos.*
+import com.example.the_movie_app.persistence.daos.*
 
-@Database(entities = [ActorsVO::class,MovieDetailVO::class,PopularMovieVO::class], version = 12,exportSchema = false)
+@Database(entities = [ActorsVO::class,MovieDetailVO::class,PopularMovieVO::class,NowPlayingMoviesVO::class,MovieReviewVO::class,MovieGenreVO::class], version = 21,exportSchema = false)
 abstract class MovieDatabase : RoomDatabase() {
 
 companion object{
@@ -35,5 +31,7 @@ companion object{
     abstract fun popularDao() : PopularDao
     abstract fun movieDetailDao() : MovieDetailDao
     abstract fun actorsDao() : ActorsDao
-
+    abstract fun nowPlayingMoviesDao() : NowPlayingMoviesDao
+    abstract fun movieReviewDao() : MovieReviewDao
+    abstract fun movieGenreDao() : MovieGenreDao
 }

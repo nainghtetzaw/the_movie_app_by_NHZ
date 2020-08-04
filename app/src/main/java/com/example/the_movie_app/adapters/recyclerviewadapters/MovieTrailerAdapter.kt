@@ -2,21 +2,19 @@ package com.example.the_movie_app.adapters.recyclerviewadapters
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.example.the_movie_app.R
-import com.example.the_movie_app.views.viewholders.BaseViewHolder
+import com.example.the_movie_app.data.vos.MovieReviewVO
+import com.example.the_movie_app.delegates.MovieDelegate
 import com.example.the_movie_app.views.viewholders.MovieTrailerViewHolder
+import com.example.the_movie_app.views.viewholders.baseviewholders.BaseMovieTrailerViewHolder
 
-class MovieTrailerAdapter : BaseAdapter() {
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BaseViewHolder {
+class MovieTrailerAdapter(delegate: MovieDelegate) : BaseAdapter<BaseMovieTrailerViewHolder,MovieReviewVO>() {
+
+    private val mDelegate : MovieDelegate = delegate
+
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MovieTrailerViewHolder{
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_movie_review,parent,false)
-        return MovieTrailerViewHolder(view)
-    }
-
-    override fun getItemCount(): Int {
-        return 5
-    }
-
-    override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
-
+        return MovieTrailerViewHolder(view,mDelegate)
     }
 }

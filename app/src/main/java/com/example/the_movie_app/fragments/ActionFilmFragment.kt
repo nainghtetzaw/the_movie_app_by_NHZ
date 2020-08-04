@@ -5,47 +5,48 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.the_movie_app.R
 import com.example.the_movie_app.adapters.recyclerviewadapters.ActionMovieAdapter
+import com.example.the_movie_app.data.models.MovieModel
+import com.example.the_movie_app.data.models.MovieModelImpl
+import com.example.the_movie_app.data.vos.MovieGenreVO
+import com.example.the_movie_app.data.vos.PopularMovieVO
 import kotlinx.android.synthetic.main.fragment_action_film.*
+import java.lang.reflect.Array.getInt
 
+private const val ARG_PARAM1 = "movie_id"
 
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-
-/**
- * A simple [Fragment] subclass.
- * Use the [ActionFilmFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class ActionFilmFragment : Fragment() {
 
-    private var param1: String? = null
-    private var param2: String? = null
+    private var movie_id: Int? = null
+    private val mModel : MovieModel = MovieModelImpl
     private val mActionViewAdapter = ActionMovieAdapter()
     private lateinit var linearLayoutManagerAction : LinearLayoutManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        linearLayoutManagerAction = LinearLayoutManager(activity?.applicationContext,LinearLayoutManager.HORIZONTAL,false)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    }
+
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_action_film, container, false)
-    }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        linearLayoutManagerAction = LinearLayoutManager(activity?.applicationContext,LinearLayoutManager.HORIZONTAL,false)
+
+        arguments?.let {
+            movie_id = it.getInt(ARG_PARAM1)
+        }
         setUpRecyclerView()
+        getDataFromPopularVO()
+        return inflater.inflate(R.layout.fragment_action_film, container, false)
     }
 
     companion object {
@@ -58,17 +59,26 @@ class ActionFilmFragment : Fragment() {
          * @return A new instance of fragment ActionFilmFragment.
          */
         @JvmStatic
-        fun newInstance(param1: String, param2: String) =
+        fun newInstance(genreid : Int) =
             ActionFilmFragment().apply {
                 arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+                        putInt(ARG_PARAM1,genreid)
                 }
             }
+    }
+
+    private fun showData(data : List<PopularMovieVO>){
+        mActionViewAdapter.setNewData(data.toMutableList())
     }
 
     private fun setUpRecyclerView(){
         rvAction.layoutManager = linearLayoutManagerAction
         rvAction.adapter = mActionViewAdapter
+    }
+
+    private fun getDataFromPopularVO(){
+        mModel.getAllPopularMoviesByGenreId(movie_id).observe(this, Observer {
+            showData(it)
+        })
     }
 }

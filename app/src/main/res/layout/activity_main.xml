@@ -125,7 +125,8 @@
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/vpCategory"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="300dp"
+                />
 
             <include layout="@layout/viewpod_showcase"/>
 

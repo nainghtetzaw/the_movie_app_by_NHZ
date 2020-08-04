@@ -15,7 +15,6 @@
             android:layout_height="250dp"
             android:contentDescription="Movie Name"
             android:scaleType="centerCrop"
-            android:paddingTop="100dp"
             app:srcCompat="@drawable/the_wolverine_poster" />
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -26,16 +25,24 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"/>
 
-        <com.google.android.material.textview.MaterialTextView
-            android:layout_width="wrap_content"
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="The Wolverine 2013. \n Official Review."
-            android:textColor="@color/color_white"
-            android:textSize="28dp"
-            android:textStyle="bold"
             android:layout_alignBottom="@id/imgReviewPoster"
-            android:layout_marginStart="20dp"
-            android:layout_marginBottom="20dp"/>
+            android:background="@drawable/transparentviewmain">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvMovieReviewName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="The Wolverine 2013. \n Official Review."
+                android:textColor="@color/color_white"
+                android:textSize="28dp"
+                android:textStyle="bold"
+                android:layout_marginStart="20dp"
+                android:layout_marginBottom="20dp"/>
+
+        </RelativeLayout>
 
     </RelativeLayout>
     

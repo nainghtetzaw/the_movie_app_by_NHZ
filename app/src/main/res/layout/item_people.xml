@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgPopularFilm"
+        android:id="@+id/imgPeople"
         android:layout_width="120dp"
         android:layout_height="180dp"
         app:srcCompat="@drawable/tom_hank"
@@ -18,13 +18,13 @@
         android:layout_height="30dp"
         android:src="@drawable/ic_baseline_favorite_border_24"
         android:padding="8dp"
-        android:layout_alignEnd="@id/imgPopularFilm"/>
+        android:layout_alignEnd="@id/imgPeople"/>
 
     <RelativeLayout
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:background="@drawable/transparentview"
-        android:layout_alignBottom="@id/imgPopularFilm">
+        android:layout_alignBottom="@id/imgPeople">
 
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvActorName"
