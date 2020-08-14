@@ -22,7 +22,7 @@ class MainPresenterImpl : AbstractBasePresenter<MainView>(),MainPresenter {
         mView?.openMovieTrailer()
     }
 
-    override fun onTapMovieItem(id : Int?) {
+    override fun onTapMovieItem(id : Int) {
         mView?.navigateToDetailScreen(id)
     }
 

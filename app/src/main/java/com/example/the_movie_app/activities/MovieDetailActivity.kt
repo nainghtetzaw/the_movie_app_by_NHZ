@@ -32,7 +32,7 @@ class MovieDetailActivity : AppCompatActivity(),DetailView {
 
     companion object{
         const val MOVIE_ID = "MOVIE_ID"
-        fun newIntent(context: Context,id : Int?) : Intent {
+        fun newIntent(context: Context?,id : Int?) : Intent {
             val intent = Intent(context,MovieDetailActivity::class.java)
                 .putExtra(MOVIE_ID,id)
             return intent

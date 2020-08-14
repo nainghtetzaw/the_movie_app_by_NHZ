@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.shared.activities.BaseActivity
 import com.example.the_movie_app.R
 import com.example.the_movie_app.adapters.recyclerviewadapters.*
 import com.example.the_movie_app.adapters.viewpageradapters.DynamicPagerAdapter
@@ -16,7 +17,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.viewpod_best_actors.*
 import kotlinx.android.synthetic.main.viewpod_showcase.*
 
-class MainActivity : AppCompatActivity(),MainView {
+class MainActivity : BaseActivity(),MainView {
 
     private lateinit var linearLayoutManagerReview : LinearLayoutManager
     private lateinit var linearLayoutManagerPopular : LinearLayoutManager

@@ -1,7 +1,7 @@
-package com.example.the_movie_app.adapters.recyclerviewadapters
+package com.example.shared.adapters
 
 import androidx.recyclerview.widget.RecyclerView
-import com.example.the_movie_app.views.viewholders.baseviewholders.BaseViewHolder
+import com.example.shared.viewholders.BaseViewHolder
 
 abstract class BaseAdapter<T : BaseViewHolder<W>,W> : RecyclerView.Adapter<T>() {
 

@@ -14,17 +14,46 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField 'String','API_KEY',"\"${movieapikey}\""
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors{
+        flavorDimensions "appModule"
+        def BASE_URL_FIELD = "BASE_URL_FIELD"
+        def BASE_DEV_URL = "\"https://dev.movieapp.com\""
+        def BASE_PROD_URL = "\"https://prod.movieapp.com\""
+        def BASE_PRO_URL = "\"https://pro.movieapp.com\""
+        dev {
+            dimension "appModule"
+            applicationIdSuffix = ".dev"
+            manifestPlaceholders = [appName : "@string/app_name_dev"]
+            buildConfigField 'String', BASE_URL_FIELD , BASE_DEV_URL
+        }
+        prod {
+            dimension "appModule"
+            applicationIdSuffix = ".prod"
+            manifestPlaceholders = [appName : "@string/app_name_prod"]
+            buildConfigField 'String', BASE_URL_FIELD , BASE_PROD_URL
+        }
+        pro {
+            dimension "appMOdule"
+            applicationIdSuffix = ".pro"
+            manifestPlaceholders = [appName : "@string/app_name_pro"]
+            buildConfigField 'String', BASE_URL_FIELD , BASE_PRO_URL
         }
     }
 }
 
 dependencies {
+    implementation project(":shared")
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
     implementation 'androidx.core:core-ktx:1.3.1'
@@ -34,10 +63,11 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    implementation 'com.google.android.material:material:1.2.0-alpha04'
 
-    //GSON
-    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation rootProject.ext.libraries.material
+
+    implementation rootProject.ext.libraries.gson
+
 
     //Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.6.1'
@@ -58,7 +88,7 @@ dependencies {
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.0.0"
 
 
-    def room_version = "2.2.3"
+    def room_version = "2.2.5"
     def lifecycle_version = "2.2.0"
 
     // LiveData

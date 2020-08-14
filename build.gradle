@@ -24,3 +24,17 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
+def movieapidb = loadMovieApiData()
+
+ext{
+    movieapikey = movieapidb.getProperty('MOVIE_API')
+}
+
+def loadMovieApiData(){
+    Properties movieApiProperties = new Properties()
+    movieApiProperties.load(project.rootProject.file('api.properties').newDataInputStream())
+    return movieApiProperties
+}
+
+apply from : 'libraries.gradle'

@@ -1,4 +1,4 @@
-package com.example.the_movie_app.views.viewholders.baseviewholders
+package com.example.shared.viewholders
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

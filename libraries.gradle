@@ -1,0 +1,10 @@
+ext{
+
+    materialVersion = "1.2.0-alpha04"
+
+    libraries = [
+            gson : "com.google.code.gson:gson:2.8.6",
+            material : "com.google.android.material:material:$materialVersion"
+    ]
+
+}

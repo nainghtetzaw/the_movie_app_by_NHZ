@@ -14,8 +14,8 @@ class PopularFilmsViewholder(itemview : View,delegate: MovieDelegate) : BasePopu
 
     init {
         itemview.setOnClickListener {
-            mData.let {
-                delegate.onTapMovieItem(it?.id)
+            mData?.let {
+                delegate.onTapMovieItem(it.id)
             }
         }
     }
