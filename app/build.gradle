@@ -2,6 +2,26 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
+apply plugin: 'me.moallemi.advanced-build-version'
+
+advancedVersioning {
+    nameOptions {
+        versionMajor 1
+        versionMinor 3
+        versionPatch 6
+    }
+    codeOptions {
+        versionCodeType 'AUTO_INCREMENT_ONE_STEP'
+    }
+    outputOptions {
+        renameOutput true
+        nameFormat 'MovieApp-v${versionName}'
+    }
+
+}
+
+def appVersionName = advancedVersioning.versionName
+def appVersionCode = advancedVersioning.versionCode
 
 android {
     compileSdkVersion 29
@@ -10,8 +30,8 @@ android {
         applicationId "com.example.the_movie_app"
         minSdkVersion 23
         targetSdkVersion 29
-        versionCode 1
-        versionName "1.0"
+        versionCode appVersionCode
+        versionName appVersionName
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
